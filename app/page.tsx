@@ -175,11 +175,10 @@ export default function Home() {
       <main className="landing-main relative z-10 w-full">
         <div className="landing-content landing-content-col flex w-full shrink-0 flex-col md:min-h-0 md:flex-1 md:justify-center">
           <h1 className="landing-title font-medium text-[#FAFAFA]">
-            Hyperlinks Space App
+            Hyperlinks Space Program
           </h1>
           <p className="landing-description text-[#FAFAFA]">
-            Blockchain & AI Application. Features recommendations, chats, swaps,
-            trades, wallets and deals. AI Transmitter accesses chains&apos; data.
+            AI & Crypto multiplatform solution for managing your assets, investing and earning. Features recommendations, chats, swaps, trades, wallets and deals. AI Transmitter accesses chains&apos; data.
           </p>
           <div className="landing-button-row flex items-center">
             <a
