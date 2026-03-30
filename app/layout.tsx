@@ -17,18 +17,18 @@ export const metadata: Metadata = {
   metadataBase: siteUrl ? new URL(siteUrl) : undefined,
   title: "Hyperlinks Space Program Landing",
   description:
-    "AI & Crypto multiplatform solution for managing your assets, investing and earning. Features recommendations, chats, swaps, trades, wallets and deals. AI Transmitter accesses chains&apos; data.",
+    "AI & Blockchain multiplatform solution for managing, investing and earning assets. Features recommendations, chats, swaps, trades, wallets and deals. AI Transmitter accesses chains&apos; data.",
   openGraph: {
     title: "Hyperlinks Space Program Landing",
     description:
-      "AI & Crypto multiplatform solution for managing your assets, investing and earning. Features recommendations, chats, swaps, trades, wallets and deals. AI Transmitter accesses chains&apos; data.",
+      "AI & Blockchain multiplatform solution for managing, investing and earning assets. Features recommendations, chats, swaps, trades, wallets and deals. AI Transmitter accesses chains&apos; data.",
     images: ["/82.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Hyperlinks Space Program Landing",
     description:
-      "AI & Crypto multiplatform solution for managing your assets, investing and earning. Features recommendations, chats, swaps, trades, wallets and deals. AI Transmitter accesses chains&apos; data.",
+      "AI & Blockchain multiplatform solution for managing, investing and earning assets. Features recommendations, chats, swaps, trades, wallets and deals. AI Transmitter accesses chains&apos; data.",
     images: ["/82.png"],
   },
 };

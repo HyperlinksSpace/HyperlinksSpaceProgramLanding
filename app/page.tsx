@@ -178,7 +178,7 @@ export default function Home() {
             Hyperlinks Space Program
           </h1>
           <p className="landing-description text-[#FAFAFA]">
-            AI & Blockchain multiplatform solution for managing your assets, investing and earning. Features recommendations, chats, swaps, trades, wallets and deals. AI Transmitter accesses chains&apos; data.
+            AI & Blockchain multiplatform solution for managing, investing and earning assets. Features recommendations, chats, swaps, trades, wallets and deals. AI Transmitter accesses chains&apos; data.
           </p>
           <div className="landing-button-row flex items-center">
             <a
