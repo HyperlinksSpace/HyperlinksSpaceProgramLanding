@@ -17,7 +17,7 @@ import * as THREE from "three";
  */
 const SCENE_BOUNDS = {
   center: new THREE.Vector3(0, -0.5, 0),
-  radius: 1.78,
+  radius: 1.95,
 };
 
 function FitCameraToScene() {
@@ -58,7 +58,8 @@ function SceneFitScale({ children }: { children: ReactNode }) {
   useFrame(() => {
     if (!scaleRef.current) return;
     projScreen.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
-    const margin = 1.0;
+    // Keep a little breathing room so animation never clips.
+    const margin = 0.995;
     const scaled = (s: number, orig: THREE.Vector3) =>
       new THREE.Vector3(
         center.x + s * (orig.x - center.x),
@@ -535,12 +536,19 @@ export default function AIScene() {
 }
 
 function CanvasWrapper() {
+  const exportMode = useMemo(() => {
+    if (typeof window === "undefined") return false;
+    return new URLSearchParams(window.location.search).get("exportStill") === "1";
+  }, []);
+
   return (
     <Canvas
       frameloop="always"
       gl={{
         alpha: true,
         antialias: true,
+        preserveDrawingBuffer: exportMode,
+        premultipliedAlpha: false,
         powerPreference: "high-performance",
       }}
       onCreated={({ gl }) => {
@@ -550,11 +558,49 @@ function CanvasWrapper() {
         position: [3.3, -3.8, 2.5],
         fov: 50,
       }}
-      style={{ background: "transparent", width: "100%", height: "100%", display: "block" }}
-      dpr={[2, 4]}
+      style={{
+        background: "transparent",
+        width: exportMode ? "1024px" : "100%",
+        height: exportMode ? "1024px" : "100%",
+        display: "block",
+      }}
+      dpr={exportMode ? 1 : [2, 4]}
     >
       <FitCameraToScene />
+      <CaptureStillOnDemand enabled={exportMode} />
       <SceneContent />
     </Canvas>
   );
+}
+
+function CaptureStillOnDemand({ enabled }: { enabled: boolean }) {
+  const { gl, scene, camera } = useThree();
+  const capturedRef = useRef(false);
+
+  useFrame((state) => {
+    if (!enabled || capturedRef.current) return;
+    if (state.clock.getElapsedTime() < 1.25) return;
+
+    capturedRef.current = true;
+    gl.render(scene, camera);
+
+    const params = new URLSearchParams(window.location.search);
+    const fileName = params.get("file") || "landing-animation-1024.png";
+    const dataURL = gl.domElement.toDataURL("image/png");
+
+    void fetch(`/api/export-png?file=${encodeURIComponent(fileName)}`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ dataURL }),
+    }).catch(() => {
+      const a = document.createElement("a");
+      a.href = dataURL;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    });
+  });
+
+  return null;
 }
