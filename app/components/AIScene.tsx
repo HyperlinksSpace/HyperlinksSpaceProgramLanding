@@ -579,7 +579,9 @@ function CaptureStillOnDemand({ enabled }: { enabled: boolean }) {
 
   useFrame((state) => {
     if (!enabled || capturedRef.current) return;
-    if (state.clock.getElapsedTime() < 1.25) return;
+    // Wait for environment map and a few frames so metal materials match live site look.
+    if (!scene.environment) return;
+    if (state.clock.getElapsedTime() < 3.5) return;
 
     capturedRef.current = true;
     gl.render(scene, camera);
