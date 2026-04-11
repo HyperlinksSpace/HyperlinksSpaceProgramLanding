@@ -9,7 +9,7 @@ export default function Home() {
   const H = s.content.desktopVisualMinHeight;
 
   return (
-    <div className="landing-root bg-[#111111] text-[#FAFAFA]">
+    <div className="landing-root bg-[#000000] text-[#FFFFFF]">
       <style
         dangerouslySetInnerHTML={{
           __html: `
@@ -168,7 +168,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Have a talk
+          Contact us
         </Link>
       </header>
 
