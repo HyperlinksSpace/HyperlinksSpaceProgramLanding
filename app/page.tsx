@@ -164,7 +164,7 @@ export default function Home() {
         </Link>
         <Link
           href="https://t.me/wwwHyperlinksSpace"
-          className="landing-contact underline text-[#FFFFFF] transition-colors hover:text-[#FFFFFF]"
+          className="landing-contact underline underline-offset-2 text-[#FFFFFF] transition-colors hover:text-[#FFFFFF]"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -202,14 +202,14 @@ export default function Home() {
             Clients:{" "}
             <Link
               href="https://program.hyperlinks.space/"
-              className="underline text-[#FFFFFF]"
+              className="underline underline-offset-3 text-[#FFFFFF]"
               target="_blank"
               rel="noopener noreferrer"
             >
               Browser
             </Link>
             <span className="text-[#FFFFFF]">,</span>
-            <span className="text-[#FFFFFF]">
+            <span className="text-[#818181]">
               {" "}Iphone, Android, Windows, Mac
             </span>
           </p>
