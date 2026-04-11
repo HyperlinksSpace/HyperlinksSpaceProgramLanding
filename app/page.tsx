@@ -151,7 +151,7 @@ export default function Home() {
           `,
         }}
       />
-      <header className="landing-header fixed left-0 right-0 top-0 z-50 flex items-center justify-between border-b border-[#818181] bg-[#111111]">
+      <header className="landing-header fixed left-0 right-0 top-0 z-50 flex items-center justify-between border-b border-[#818181] bg-[#000000]">
         <Link href="/" className="flex shrink-0">
           <Image
             src="/HyperlinksSpace.svg"
@@ -164,7 +164,7 @@ export default function Home() {
         </Link>
         <Link
           href="https://t.me/wwwHyperlinksSpace"
-          className="landing-contact text-[#FAFAFA] transition-colors hover:text-[#FAFAFA]"
+          className="landing-contact underline text-[#FFFFFF] transition-colors hover:text-[#FFFFFF]"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -174,10 +174,10 @@ export default function Home() {
 
       <main className="landing-main relative z-10 w-full">
         <div className="landing-content landing-content-col flex w-full shrink-0 flex-col md:min-h-0 md:flex-1 md:justify-center">
-          <h1 className="landing-title font-medium text-[#FAFAFA]">
+          <h1 className="landing-title font-medium text-[#FFFFFF]">
             Hyperlinks Space Program
           </h1>
-          <p className="landing-description text-[#FAFAFA]">
+          <p className="landing-description text-[#FFFFFF]">
             AI & Blockchain multiplatform solution for managing, investing and earning assets. Features recommendations, chats, swaps, trades, wallets and deals. AI Transmitter accesses chains&apos; data.
           </p>
           <div className="landing-button-row flex items-center">
@@ -185,7 +185,7 @@ export default function Home() {
               href="https://t.me/HyperlinksSpaceBot/APP?mode=fullscreen"
               target="_blank"
               rel="noopener noreferrer"
-              className="primary-button inline-flex items-center bg-[#1AAA11] font-medium text-[#FAFAFA] transition-opacity hover:opacity-90"
+              className="primary-button inline-flex items-center bg-[#1AAA11] font-medium text-[#FFFFFF] transition-opacity hover:opacity-90"
             >
               Launch Program
               <Image
@@ -198,18 +198,18 @@ export default function Home() {
               />
             </a>
           </div>
-          <p className="landing-clients text-[#FAFAFA]">
+          <p className="landing-clients text-[#FFFFFF]">
             Clients:{" "}
             <Link
               href="https://program.hyperlinks.space/"
-              className="underline text-[#FAFAFA]"
+              className="underline text-[#FFFFFF]"
               target="_blank"
               rel="noopener noreferrer"
             >
               Browser
             </Link>
-            <span className="text-[#FAFAFA]">,</span>
-            <span className="text-[#818181]">
+            <span className="text-[#FFFFFF]">,</span>
+            <span className="text-[#FFFFFF]">
               {" "}Iphone, Android, Windows, Mac
             </span>
           </p>
